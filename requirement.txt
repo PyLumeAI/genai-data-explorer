@@ -1,0 +1,12 @@
+streamlit>=1.36
+duckdb>=1.0.0
+pandas>=2.2
+altair>=5.3
+sqlglot>=23.0
+python-dotenv>=1.0
+openai>=1.35
+pydantic>=2.7
+# optional
+psycopg2-binary>=2.9
+SQLAlchemy>=2.0
+polars>=1.5

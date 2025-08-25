@@ -1,0 +1,18 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# streamlit
+.streamlit/secrets.toml
+
+# data
+*.parquet
+*.db
+*.duckdb
+sample_data/*.tmp
+
+# os/editor
+.DS_Store
+.vscode/
