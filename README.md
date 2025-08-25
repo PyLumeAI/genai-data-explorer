@@ -109,8 +109,9 @@ OPENAI_API_KEY = "sk-..."
 PG_URI = "postgresql+psycopg2://user:pass@host:5432/dbname"
 ```
 ## ▶️ Run the App
+```toml
 streamlit run app.py
-
+```
 ## 🔍 Use Cases
 - Business analysts exploring sales/customer data without SQL
 - Finance teams reviewing expense trends
