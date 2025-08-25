@@ -102,13 +102,13 @@ cd genai-data-explorer
 python -m venv .venv && source .venv/bin/activate   # (Windows: .venv\Scripts\activate)
 pip install -r requirements.txt
 ```
-## Configure API Keys
+## 🔑 Configure API Keys
 ```toml
 OPENAI_API_KEY = "sk-..."
 # Optional Postgres
 PG_URI = "postgresql+psycopg2://user:pass@host:5432/dbname"
 ```
-## Run the App
+## ▶️ Run the App
 streamlit run app.py
 
 ## 🔍 Use Cases
