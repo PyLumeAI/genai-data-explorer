@@ -109,7 +109,7 @@ OPENAI_API_KEY = "sk-..."
 PG_URI = "postgresql+psycopg2://user:pass@host:5432/dbname"
 ```
 ## ▶️ Run the App
-```toml
+```bash
 streamlit run app.py
 ```
 ## 🔍 Use Cases
