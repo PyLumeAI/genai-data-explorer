@@ -108,7 +108,7 @@ OPENAI_API_KEY = "sk-..."
 # Optional Postgres
 PG_URI = "postgresql+psycopg2://user:pass@host:5432/dbname"
 ```
-## ▶️ Run the App
+## 🚀 Run the App
 ```bash
 streamlit run app.py
 ```
@@ -118,15 +118,23 @@ streamlit run app.py
 - Startups querying their user activity CSV exports
 - Consultants demoing quick insights to clients
 
-📜 License
-Distributed under the MIT License. 
+## 📜 License
+Distributed under the MIT License. See [LICENSE](LICENSE) for details. 
 
-✨ About PyLumeAI
+## 📌 Roadmap
+- [ ] Multi-table joins with semantic reasoning  
+- [ ] Semantic column aliases (e.g., “revenue” → `price * qty`)  
+- [ ] Save & share queries as “cards”  
+- [ ] Export charts as PNG/PDF  
+- [ ] Authentication & user query history  
 
-PyLumeAI builds data engineering pipelines and AI-powered applications.
-This is the second showcase project, after PaySim Fraud Analytics
-.
 
-👉 Visit: https://pylumeai.com
+## ✨ About PyLumeAI
+
+PyLumeAI builds data engineering pipelines and AI-powered applications.  
+This is the second showcase project, after [PaySim Fraud Analytics](https://github.com/PyLumeAI/paysim-fraud-analytics).  
+
+
+👉 Visit: [https://pylumeai.com](https://pylumeai.com)  
 
 👉 Contact: contact.pylumeai@gmail.com
