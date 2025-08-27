@@ -55,7 +55,8 @@ This app allows **non-technical users** to query and visualize their data by sim
 <img src="docs/images/ui_query.png" alt="Query UI" width="600"/>
 
 ### Table + Chart + Insight
-<img src="docs/images/ui_chart.png" alt="Chart Output" width="600"/>
+<img src="docs/images/ui_chart1.png" alt="Chart Output" width="600"/>
+<img src="docs/images/ui_chart2.png" alt="Chart Output" width="600"/>
 
 ---
 
