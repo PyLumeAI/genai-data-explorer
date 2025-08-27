@@ -1,0 +1,11 @@
+[ui]
+hideTopBar = false
+
+[runner]
+magicEnabled = false
+
+[client]
+toolbarMode = "viewer"
+
+[theme]
+base = "light"

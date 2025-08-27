@@ -76,3 +76,28 @@ def schema_for_prompt(con, table_name: str) -> dict:
     cols = [{"name": r["column_name"], "dtype": str(r["column_type"])} for _, r in cols_df.iterrows()]
     semantics = _infer_semantics(cols_df)
     return {"tables": {table_name: {"columns": cols}}}
+
+def schema_for_prompt_multi(con, table_names: list[str]) -> dict:
+    tbls = {}
+    colnames_by_table = {}
+    for t in table_names:
+        cols_df = con.execute(f"DESCRIBE SELECT * FROM {t} LIMIT 0").fetchdf()
+        cols = [{"name": r["column_name"], "dtype": str(r["column_type"])} for _, r in cols_df.iterrows()]
+        tbls[t] = {"columns": cols}
+        colnames_by_table[t] = set([c["name"] for c in cols])
+
+    joins = []
+    for i in range(len(table_names)):
+        for j in range(i+1, len(table_names)):
+            a, b = table_names[i], table_names[j]
+            shared = list(colnames_by_table[a].intersection(colnames_by_table[b]))
+            if shared:
+                for col in shared:
+                    joins.append({
+                        "left": a,
+                        "right": b,
+                        "on": col,
+                        "type": "inner"
+                    })
+
+    return {"tables": tbls, "joins": joins}

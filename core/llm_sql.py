@@ -35,6 +35,7 @@ Rules:
 - If there is a date-like column and the question asks for trends, prefer a LINE chart with the date-like column on X.
 - If one categorical + one numeric, prefer BAR.
 - If two numeric columns, prefer SCATTER.
+- If the question asks for a breakdown by a categorical field (e.g., “by segment/region/product”), set chart.series to that field so multi-series visuals are possible.
 - PIE is acceptable for small categorical distributions (<=10).
 - You MAY use computed_fields from SEMANTICS (by inlining their expression in SELECT) when relevant.
 - Do NOT invent columns. Always alias computed expressions.
@@ -92,7 +93,32 @@ FEW_SHOT = [
             "chart": {"type": "bar", "x": "region", "y": "revenue", "series": ""},
             "summary": "Regions ranked by computed revenue."
         }
+    },
+    {
+    "q": "Monthly trend broken down by category",
+    "schema_hint": {
+        "tables": {
+            "mytable": {
+                "columns": [
+                    {"name": "ts", "dtype": "DATE"},
+                    {"name": "category", "dtype": "VARCHAR"},
+                    {"name": "value", "dtype": "DOUBLE"}
+                ]
+            }
+        },
+        "semantics": {
+            "categorical": ["category"],
+            "numeric": ["value"],
+            "datelike": ["ts"]
+        }
+    },
+    "a": {
+        "sql": "SELECT date_trunc('month', CAST(ts AS DATE)) AS month, category, SUM(value) AS total_value FROM mytable GROUP BY month, category ORDER BY month, category LIMIT 1000",
+        "chart": {"type": "line", "x": "month", "y": "total_value", "series": "category"},
+        "summary": "Monthly trend with one line per category."
     }
+}
+
 ]
 
 
