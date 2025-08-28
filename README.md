@@ -73,7 +73,7 @@ genai-data-explorer/
 │ ├── llm_sql.py # LLM prompt + JSON output
 │ ├── sql_guard.py # SQL validation & LIMIT enforcement
 │ ├── schema_introspect.py # Schema summary for LLM
-│ ├── chart_suggest.py # Chart type heuristics
+│ ├── sql_fixups.py # Curate SQL
 │ └── summarizer.py # Insight text generation
 ├── connectors/ # Data connectors
 │ ├── duck_conn.py # DuckDB connector
