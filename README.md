@@ -50,7 +50,7 @@ This app allows **non-technical users** to query and visualize their data by sim
 ---
 
 ## 🌐 Live Demo
-Try it here 👉 [![Streamlit Cloud App](https://pylumeai-genai-data-explorer.streamlit.app)]
+Try it here 👉 [![Streamlit Cloud App](https://img.shields.io/badge/Frontend-Streamlit-orange)](https://pylumeai-genai-data-explorer.streamlit.app)
 
 ## 📊 Example Screens
 
